@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+namespace ConsoleApp9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.Write("$ Kelime girin > ");
+                string kelime = Console.ReadLine().Trim();
+                if (!string.IsNullOrEmpty(kelime)) // boş değer girilmiş mi kontrol eder
+                {
+                    string[] kelimeler = kelime.Split(' '); // split ile boşlukları kaldırır dönen değer array değer döndürür
+                    foreach (var item in kelimeler) //kelimleri alır
+                    {
+                        Console.Write(Dönüştür(item) + " ");
+                        continue;
+                    }
+                    Console.WriteLine("\nDevam etmek ister misin? (E/H)");
+                    ReadKey();
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.WriteLine("Boş değer giremezsin.");
+                    Console.WriteLine("\nDevam etmek ister misin? (E/H)");
+                    ReadKey();
+                    Console.Clear();
+                }
+            }
+        }
+
+        static void ReadKey()
+        {
+            ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
+            if (consoleKeyInfo.Key == ConsoleKey.H)
+            {
+                Console.Clear();
+                Environment.Exit(0); // Konsolu kapatır
+            }
+        }
+        static string Dönüştür(string text)
+        {
+
+            if (text.Length == 1)//eğer text 1 harfli ise uzunluk 0'dan küçük olamaz hatasını çözer
+            {
+                return char.ToUpper(text[0]).ToString();
+            }
+
+
+            char first = text[0]; // textin ilk harfini alır
+            char last = text[text.Length - 1]; // textin son harfini alır text.Length - 1
+            string middle = text.Substring(1, text.Length - 2); // substring 1. indexden itibaren [text.Length - 2] kadar harf alır
+
+            return char.ToUpper(first) + middle + char.ToUpper(last);
+        }
+    }
+}
