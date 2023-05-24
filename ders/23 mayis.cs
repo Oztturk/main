@@ -44,7 +44,7 @@ namespace ConsoleApp2
             decimal num5 = Convert.ToDecimal(Console.ReadLine()); ;
             long num6 = Convert.ToInt64(Console.ReadLine());
 
-            Console.WriteLine(Math.Abs(num)); // Math.Abs() negatif değeri pozitif yapar eğer pozitif'i de negatif yapar
+            Console.WriteLine(Math.Abs(num)); // Math.Abs() negatif değeri pozitif yapar pozitif'i de negatif yapar
             Console.WriteLine(Math.Abs(num2));
             Console.WriteLine(Math.Abs(num3));
             Console.WriteLine(Math.Abs(num4));
