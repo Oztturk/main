@@ -15,7 +15,7 @@ namespace ConsoleApp2
             float num1 = 1.4f;
             float num2 = 3.8f;
 
-            Console.WriteLine(Math.Ceiling(num1)); //Ceiling sayı 1.1 ise 2'ye yuvarlar
+            Console.WriteLine(Math.Ceiling(num1)); //Ceiling sayı >= 1.1  ise 2'ye yuvarlar sayı tam sayı ise hiç bir şey yapmaz
             Console.WriteLine(Math.Round(num1)); // Round klasik matematik yuvarlaması 1.5 >= 2 | 1 
             Console.WriteLine("***********");
             Console.WriteLine(Math.Ceiling(num2));
